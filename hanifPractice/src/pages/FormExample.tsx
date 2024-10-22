@@ -12,18 +12,25 @@ const FormExample = () => {
     e.preventDefault();
     console.log(user);
   };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(user);
+    const inputName = e.target.name;
+    const value = e.target.value;
+    setUser({ ...user, [inputName]: value });
+  };
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <input
-          onChange={(e) => setUser({ ...user, name: e.target.value })}
+          onChange={handleChange}
           className="border-4 border-red-300"
           type="text"
           name="name"
           id="name"
         />
         <input
-          onChange={(e) => setUser({ ...user, email: e.target.value })}
+          onChange={handleChange}
           className="border-4 border-red-400"
           type="text"
           name="email"
