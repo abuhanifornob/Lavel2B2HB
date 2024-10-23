@@ -1,30 +1,9 @@
 import { useEffect, useState } from "react";
 import UserList from "./UserList";
+import useUserData from "../hooks/useUserData";
 
 const UserContainer = () => {
-  const [isLoading, setIsloading] = useState(false);
-  const [error, setError] = useState(false);
-  const [data, setData] = useState([]);
-  const userUrl = "https://jsonplaceholder.typicode.com/users";
-  const getUserData = async () => {
-    setIsloading(true);
-    try {
-      const res = await fetch(userUrl);
-      const data = await res.json();
-      setIsloading(false);
-      setData(data);
-      console.log(data);
-    } catch (err) {
-      setError(err);
-    }
-  };
-
-  if (isLoading && !error) {
-    <p>Loading .....</p>;
-  }
-  useEffect(() => {
-    getUserData();
-  }, []);
+  const { isLoading, error, data } = useUserData();
 
   return (
     <div>
