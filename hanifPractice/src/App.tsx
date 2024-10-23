@@ -1,15 +1,13 @@
-import { useState } from "react";
-import UseStateExample from "./pages/UseStateExample";
-import FormExample from "./pages/FormExample";
-import UseReducerExample from "./pages/UseReducerExample";
+import UserContainer from "./component/UserContainer";
 
 function App() {
   // const [counter, setCounter] = useState(0);
   return (
     <>
-      <FormExample />
+      {/* <FormExample /> */}
       {/* <UseStateExample counter={counter} setCounter={setCounter} />  */}
       {/* <UseReducerExample /> */}
+      <UserContainer />
     </>
   );
 }
