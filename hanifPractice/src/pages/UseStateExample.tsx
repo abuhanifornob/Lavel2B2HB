@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 type TCounter = {
   counter: number;
   setCounter: React.Dispatch<React.SetStateAction<number>>;
@@ -17,7 +15,7 @@ const UseStateExample = ({ counter, setCounter }: TCounter) => {
           onClick={() => setCounter((prevCounter) => prevCounter + 1)}
           className="btn btn-primary"
         >
-          IncrementBySetAmount
+          Increment
         </button>
         <button
           onClick={() => setCounter((prevCounter) => prevCounter - 1)}
@@ -25,7 +23,6 @@ const UseStateExample = ({ counter, setCounter }: TCounter) => {
         >
           Decrement
         </button>
-
         <button onClick={() => setCounter(0)} className="btn btn-accent">
           Resed
         </button>
