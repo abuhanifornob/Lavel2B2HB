@@ -17,4 +17,8 @@
   select {
     @apply w-full border border-green-300 rounded-md focus:ring-2 focus:ring-purple-400;
   }
+  [type="checkbox"],
+  [type="radio"] {
+    @apply border border-green-500 rounded-md hover:bg-purple-400 focus:bg-purple-500 checked:bg-blue-700 focus:right-1;
+  }
 }

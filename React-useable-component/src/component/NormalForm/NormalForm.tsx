@@ -10,18 +10,18 @@ const NormalForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className={cn("border border-red-300 w-full mx-auto p-5", {
-        "max-w-5xl": dubble,
-        "max-w-md": !dubble,
-      })}
+      className={cn(
+        "border border-green-200 rounded-lg shadow-lg w-full mx-auto p-5",
+        {
+          "max-w-5xl": dubble,
+          "max-w-md": !dubble,
+        }
+      )}
     >
       <div
-        className={cn(
-          "border border-green-600 grid grid-cols-1 justify-items-center gap-5",
-          {
-            "md:grid-cols-2": dubble,
-          }
-        )}
+        className={cn(" grid grid-cols-1 justify-items-center gap-5", {
+          "md:grid-cols-2": dubble,
+        })}
       >
         <div className="w-full max-w-md">
           <label className="block" htmlFor="name">
@@ -59,9 +59,27 @@ const NormalForm = () => {
           </label>
           <textarea></textarea>
         </div>
+        <div className="w-full max-w-md">
+          <label className="block" htmlFor="checkbox">
+            CheckBox
+          </label>
+          <input type="checkbox" id="checkbox" {...register("checkbox")} />
+        </div>
       </div>
-
-      <button type="submit">Submit</button>
+      <div
+        className={cn(" grid grid-cols-1 justify-items-center gap-5", {
+          "md:grid-cols-2": dubble,
+        })}
+      >
+        <div className="flex start-2">
+          <button
+            className=" w-full md:w-fit btn rounded-md px-3 py-2 bg-slate-700 text-white"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
     </form>
   );
 };
